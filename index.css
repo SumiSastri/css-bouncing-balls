@@ -1,0 +1,170 @@
+body {
+	background: palegreen;
+}
+.ball_1 {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	background: red;
+	animation: circuit 23s linear infinite, bounce 10s linear infinite;
+}
+.ball_2 {
+	position: absolute;
+	width: 125px;
+	height: 150px;
+	border-radius: 100%;
+	background: pink;
+	animation: bounce 10s linear infinite, moveright 4s linear infinite;
+}
+.ball_3 {
+	position: absolute;
+	width: 250px;
+	height: 200px;
+	border-radius: 100%;
+	background: orange;
+	animation: bounce 8s linear infinite, cubic-bezier(0.55, 0.085, 0.68, 0.53) 2s linear infinite;
+}
+.ball_4 {
+	position: relative;
+	width: 225px;
+	height: 150px;
+	border-radius: 100%;
+	background: purple;
+	animation: bounce 5s linear infinite, cubic-bezier(1, 0, 0, 1) 12s linear infinite;
+}
+.ball_5 {
+	position: absolute;
+	width: 150px;
+	height: 200px;
+	border-radius: 90%;
+	background: papayawhip;
+	border: 5px solid brown;
+	animation: moveleft 5s linear infinite, bounce 10s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+		moveright 5s linear infinite, circuit 10s;
+}
+.ball_6 {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border-radius: 90%;
+	border: 5px solid navy;
+	background: cyan;
+	animation: circuit 10s linear infinite, bounce 10s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.ball_7 {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	background: salmon;
+	animation: moveright 13s linear infinite, circuit cubic-bezier(0.6, -0.28, 0.735, 0.045) 8s;
+}
+.ball_8 {
+	position: relative;
+	width: 190px;
+	height: auto;
+	border-radius: 100%;
+	background: black;
+	animation: bounce 5s linear infinite, circuit 20s linear infinite;
+}
+/*cubic bezier*/
+
+@keyframes bounce {
+	0% {
+		bottom: 100%;
+	}
+	25% {
+		bottom: 0%;
+		width: 100px;
+		height: 100px;
+	}
+	30% {
+		bottom: 0%;
+		height: 50px;
+		width: 110px;
+	}
+	35% {
+		bottom: 0%;
+		height: 50px;
+		width: 100px;
+	}
+	70% {
+		bottom: 100%;
+	}
+	100% {
+		bottom: 100%;
+	}
+}
+@keyframes moveleft {
+	from {
+		left: 5%;
+	}
+	to {
+		right: 80%;
+	}
+}
+@keyframes moveright {
+	from {
+		right: 10%;
+	}
+	to {
+		left: 90%;
+	}
+}
+
+@keyframes circuit {
+	0% {
+		left: 0;
+		top: 0;
+	}
+
+	24% {
+		left: 430px;
+		top: 0px;
+		transform: rotate(0deg);
+	}
+
+	26% {
+		left: 430px;
+		top: 0px;
+		transform: rotate(90deg);
+	}
+
+	49% {
+		left: 430px;
+		top: 450px;
+		transform: rotate(90deg);
+	}
+
+	51% {
+		left: 430px;
+		top: 450px;
+		transform: rotate(180deg);
+	}
+
+	74% {
+		left: 0px;
+		top: 450px;
+		transform: rotate(180deg);
+	}
+
+	76% {
+		left: -25px;
+		top: 450px;
+		transform: rotate(270deg);
+	}
+
+	85% {
+		left: -25px;
+		top: 100px;
+		transform: rotate(270deg);
+	}
+
+	100% {
+		left: -25px;
+		top: 100px;
+		transform: rotate(270deg);
+	}
+}
